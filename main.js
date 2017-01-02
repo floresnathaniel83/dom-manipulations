@@ -132,19 +132,19 @@ var reverseWord = ""
     
     }
 
-
-
-    
-
-  
-
-
-
 //split into an array of strings and then reverse the words
   // TASK #7
 })
-
-document.querySelector("#cycle-image button").addEventListener('click',function(){
 //split url into a string and push a new number
-  // TASK #8
+// TASK #8
+document.querySelector("#cycle-image button").addEventListener('click',function(){
+  var cityImg = document.querySelector("#city-img")
+  urlLength = cityImg.src.length
+  urlLastChar = cityImg.src[urlLength - 1]
+  var i = urlLastChar
+  i = parseInt(urlLastChar) + 1
+  cityImg.src = "http://lorempixel.com/400/200/city/" + i
+
 })
+
+
