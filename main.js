@@ -7,10 +7,9 @@ document.querySelector("#thanks button").addEventListener('click',function(){
 
 document.querySelector("#double button").addEventListener('click',function(){
   // TASK #2
-  	
   var pNode = document.querySelector("#compoundInvestment")
   var value = pNode.textContent
-  pNode.textContent = parseInt(value) * 2
+  pNode.textContent = value * 2
 
 
 })
@@ -18,13 +17,10 @@ document.querySelector("#double button").addEventListener('click',function(){
 document.querySelector("#color-circle button").addEventListener('click',function(){
   // TASK #3
   var divNode = document.querySelector("#circle-bw")
- 	console.log(divNode)
-  if (divNode.style.backgroundColor === "black") {
-  	//console.log(divNode.style.backgroundColor)
+  if(divNode.style.backgroundColor === "black"){
   	    divNode.style.backgroundColor = "white"
 	} else {
-
-		divNode.style.backgroundColor = "black"
+        divNode.style.backgroundColor = "black"
 	}
 
 })
@@ -65,7 +61,7 @@ document.querySelector("#blow-up button").addEventListener('click',function(){
    
   }
 
-  // TASK #4}
+  // TASK #4
 })
 
 document.querySelector("#remove button").addEventListener('click',function(){
@@ -94,30 +90,61 @@ clearInactive(ulNode, liNodes)
 
 document.querySelector("#reverse-squares button").addEventListener('click',function(){
 
-var spanNode = document.querySelectorAll(".answer-box > span")
-console.log(spanNode)
+var spanNodes = document.querySelectorAll("#reverse-squares span")
+var containerNode = document.querySelector("#reverse-squares .answer-box")
  
 var reverseSquares = function(spanNodes) {
   for(var i = spanNodes.length - 1; i >= 0; i--){
-    
-
-  }
+      var oneSpan = spanNodes[i]
+      containerNode.removeChild(oneSpan)
+      containerNode.appendChild(oneSpan)
+     }
   
   
 
 }
-reverseSquares(spanNode)
+reverseSquares(spanNodes)
 
-
-
-
-  // TASK #6
 })
 
+  // TASK #6
+
 document.querySelector("#pig-latin button").addEventListener('click',function(){
+
+var containerNode = document.querySelector("#tasks")
+
+var liNodes = document.querySelectorAll("#tasks li")
+
+containerNode.innerHTML = ''
+
+var reverseWord = ""
+    for(var i = 0; i < liNodes.length; i++) {
+      var oneNode = liNodes[i]
+      var content = oneNode.innerHTML
+      var changedContent = ''
+
+      for(var x = content.length - 1; x >= 0; x--) {
+        changedContent += content[x] 
+      }
+
+      content = changedContent
+      containerNode.innerHTML += '<li>' + content + '</li>'
+    
+    }
+
+
+
+    
+
+  
+
+
+
+//split into an array of strings and then reverse the words
   // TASK #7
 })
 
 document.querySelector("#cycle-image button").addEventListener('click',function(){
+//split url into a string and push a new number
   // TASK #8
 })
