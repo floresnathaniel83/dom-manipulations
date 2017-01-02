@@ -94,30 +94,59 @@ clearInactive(ulNode, liNodes)
 
 document.querySelector("#reverse-squares button").addEventListener('click',function(){
 
-var spanNode = document.querySelectorAll(".answer-box > span")
-console.log(spanNode)
+var spanNodes = document.querySelectorAll("#reverse-squares span")
+var containerNode = document.querySelector("#reverse-squares .answer-box")
  
 var reverseSquares = function(spanNodes) {
   for(var i = spanNodes.length - 1; i >= 0; i--){
-    
-
-  }
+      var oneSpan = spanNodes[i]
+      containerNode.removeChild(oneSpan)
+      containerNode.appendChild(oneSpan)
+     }
   
   
 
 }
-reverseSquares(spanNode)
+reverseSquares(spanNodes)
 
-
-
+})
 
   // TASK #6
-})
 
 document.querySelector("#pig-latin button").addEventListener('click',function(){
+
+var containerNode = document.querySelector("#tasks")
+
+var liNodes = document.querySelectorAll("#tasks li")
+
+containerNode.innerHTML = ''
+
+var reverseWord = ""
+    for(var i = 0; i < liNodes.length; i++) {
+      var oneNode = liNodes[i]
+      var content = oneNode.innerHTML
+      var changedContent = ''
+
+      for(var x = content.length - 1; x >= 0; x--) {
+        changedContent += content[x] 
+      }
+
+      content = changedContent
+      containerNode.innerHTML += '<li>' + content + '</li>'
+    
+    }
+
+//split into an array of strings and then reverse the words
   // TASK #7
 })
-
+//split url into a string and push a new number
+// TASK #8
 document.querySelector("#cycle-image button").addEventListener('click',function(){
-  // TASK #8
+  var cityImg = document.querySelector("#city-img")
+  urlLength = cityImg.src.length
+  urlLastChar = cityImg.src[urlLength - 1]
+  var i = urlLastChar
+  i = parseInt(urlLastChar) + 1
+  cityImg.src = "http://lorempixel.com/400/200/city/" + i
+
 })
